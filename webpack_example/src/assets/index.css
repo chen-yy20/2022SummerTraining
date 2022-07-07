@@ -16,3 +16,11 @@ body{
     border: 5px solid #1d78c1;
     background-color: #8dd6f9;
 }
+
+#chicken {
+    margin:0;
+    justify-content: center;
+    width: 400px;
+    height:300px;
+    object-fit: cover;
+}
