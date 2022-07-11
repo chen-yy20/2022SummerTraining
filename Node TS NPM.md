@@ -1,4 +1,6 @@
-# Node npm
+# Node & Webpack
+
+陈宇阳   chen-yy20@mails.tsinghua.edu.cn
 
 ## Node.js
 
@@ -572,3 +574,6 @@ const config = {
 module.exports = config; // 
 ```
 
+## Webpack操作实例
+
+这是比较有趣的部分，整个项目的文件在。
