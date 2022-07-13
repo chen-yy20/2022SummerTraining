@@ -1,5 +1,7 @@
 # TypeScript
 
+> 本讲内容：TypeScript、Node.js、Webpack
+>
 > 参照2020暑培讲义：[JS&TS - EESAST Training 2020](https://eesast.github.io/training2020/web/js&ts.html)以及[深入理解 TypeScript ](https://jkchao.github.io/typescript-book-chinese/#why) 以及[官方文档](https://www.typescriptlang.org/docs/home.html)（[中文](https://www.tslang.cn/index.html)）。
 >
 > 此处仅作简单介绍，更加深入的学习可以参考上述**后两项**。
@@ -11,6 +13,31 @@ JavaScript 是一个不具有强类型的动态语言，这赋予了它极大的
 你可以利用 TypeScript 在编译期进行类型检查，提前发现错误。我们在使用ts的时候，最终还是会将其编译为js代码，但是在编译的时候会进行静态类型检查如果发现有错误，编译的时候就会报错。
 
 可以认为TypeScript就是增加了类型检查的JavaScript。
+
+## 安装TypeScript
+
+有两种主要的方式来获取TypeScript工具：
+
+- 通过npm（Node.js包管理器）
+- 安装Visual Studio的TypeScript插件
+
+Visual Studio 2017和Visual Studio 2015 Update 3默认包含了TypeScript。 如果你的Visual Studio还没有安装TypeScript，你可以[下载](https://www.tslang.cn/#download-links)它。
+
+针对使用npm的用户：
+
+```shell
+npm install -g typescript
+```
+
+使用`tsc -v`检查是否安装成功。
+
+输入
+
+```shell
+tsc <待编译文件路径>
+```
+
+即可运行TypeScript编译器，生成一个编译后的js文件。
 
 ## 类型注解
 

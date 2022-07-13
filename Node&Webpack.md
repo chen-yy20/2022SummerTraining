@@ -2,6 +2,8 @@
 
 陈宇阳   chen-yy20@mails.tsinghua.edu.cn
 
+> 本讲义参考node.js官网，npm官网，webpack官方文档，2021软件部暑培node、webpack讲义，以及一大堆乱七八糟的CSDN知乎博客园简书，不免有错误之处，欢迎批评指正！
+
 ## Node.js
 
 ### 简介
@@ -176,13 +178,13 @@ npm (Node Package Manager)与 yarn 都是包管理和分发工具，可以实现
 
 我们纯纯地在JS中引入jQuery需要怎么做呢？
 
-```javascript
+```html
 <body>
 <!--At the end of body block...-->
 <script src="js/jquery.js"></script> <!--jQuery first-->
-<script src="js/jquery.datepicker-zh-CN.min.js"></script
+<script src="js/jquery.datepicker-zh-CN.min.js"></script>
 <script src="js/jquery-ui.js"></script>
-</body
+</body>
 ```
 
 需要关注引入位置、引入顺序，甚至是一些插件的运行时机。
@@ -217,7 +219,7 @@ JS模块化概念并非与生俱来。直到Node.js的诞生把JS带到了服务
 
 JavaScript 诞生之初只是作为一个脚本语言来使用，做一些简单的表单校验等等。所以代码量很少，最开始都是直接写到 `<script>` 标签里，如下所示：
 
-```javascript
+```html
 // index.html
 <script>
     var name = 'morrain'
@@ -227,7 +229,7 @@ JavaScript 诞生之初只是作为一个脚本语言来使用，做一些简单
 
 随着业务进一步复杂，Ajax 诞生以后，前端能做的事情越来越多，代码量飞速增长，开发者们开始把 JavaScript 写到独立的 js 文件中，与 html 文件解耦。像下面这样：
 
-```javascript
+```html
 // index.html
 <script src="./mine.js"></script>
 
@@ -238,11 +240,14 @@ var age = 18
 
 再后来，更多的开发者参与进来，更多的 js 文件被引入进来:
 
-```javascript
+```html
 // index.html
 <script src="./mine.js"></script>
 <script src="./a.js"></script>
 <script src="./b.js"></script>
+```
+
+```javascript
 // mine.js
 var name = 'morrain'
 var age = 18
@@ -256,17 +261,20 @@ var name = 'hanmeimei'
 var age = 13
 ```
 
- JavaScript 在 ES6 之前是没有模块系统，也没有封闭作用域的概念的，所以上面三个 js 文件里申明的变量都会存在于全局作用域中。随着js文件数量与复杂度增加，越来越容易与其它 js 文件冲突。**全局变量污染**开始成为开发者的噩梦。
+JavaScript 在 ES6 之前是没有模块系统，也没有封闭作用域的概念的，所以上面三个 js 文件里申明的变量都会存在于全局作用域中。随着js文件数量与复杂度增加，越来越容易与其它 js 文件冲突。**全局变量污染**开始成为开发者的噩梦。
 
 **命名空间？**
 
 开发者尝试使用命名空间来解决全局变量污染问题。
 
-```javascript
+```html
 // index.html
 <script src="./mine.js"></script>
 <script src="./a.js"></script>
 <script src="./b.js"></script>
+```
+
+```javascript
 // mine.js
 app.mine = {}
 app.mine.name = 'morrain'
@@ -289,11 +297,14 @@ app.moduleB.age = 13
 
 开发者尝试利用JS函数作用域的闭包特性解决此问题。
 
-```javascript
+```html
 // index.html
 <script src="./mine.js"></script>
 <script src="./a.js"></script>
 <script src="./b.js"></script>
+```
+
+```javascript
 // mine.js
 app.mine = (function(){
     var name = 'morrain'
@@ -504,6 +515,8 @@ Webpack是一个模块打包器，主要目标是把杂乱无章的JavaScript文
 
 ### 为什么使用Webpack
 
+前文已述。
+
 Webpack给出一种解决方式：如果 Webpack 了解依赖关系，它会仅捆绑我们在生产环境中实际需要的部分。我们通过 JavaScript 向webpack传递依赖关系，使得构建过程更加容易。
 
 换句话说：你只需要把项目代码**写明白**，并加以适当的**配置**，Webpack就会自动持续地工作。
@@ -574,6 +587,9 @@ const config = {
 module.exports = config; // 
 ```
 
+
+
 ## Webpack操作实例
 
-这是比较有趣的部分，整个项目的文件在。
+详见录屏，项目文件在github [chen-yy20/2022SummerTraining](https://github.com/chen-yy20/2022SummerTraining)。
+
